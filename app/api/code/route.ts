@@ -6,7 +6,7 @@ import { checkSubscription } from "@/lib/subscription";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 
 const openai = new OpenAi({
-  apiKey: process.env.OPEN_API_KEY
+  apiKey: process.env.OPENAI_API_KEY
 });
 
 interface ChatCompletionRequestMessage{
