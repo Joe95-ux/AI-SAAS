@@ -1,11 +1,11 @@
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
-import OpenAi from "openai";
+import OpenAI from "openai";
 
 import { checkSubscription } from "@/lib/subscription";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 
-const openai = new OpenAi({
+const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
 
@@ -31,7 +31,7 @@ export async function POST(
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    if (!process.env.OPEN_API_KEY) {
+    if (!process.env.OPENAI_API_KEY) {
       return new NextResponse("OpenAI API Key not configured.", { status: 500 });
     }
 
